@@ -6,7 +6,7 @@ const { addJob, getJobs, updateJob, getJobById } = require('../controllers/authC
 router.post('/addjob', addJob);
 
 // Get all jobs
-router.get('/addjob', getJobs);
+router.get('/getjob', getJobs);
 
 // update 
 router.put('/updatejob/:id', updateJob);
