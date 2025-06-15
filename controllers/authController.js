@@ -37,7 +37,6 @@ const registerUser = async (req, res) => {
   } catch (err) {
     res.status(500).json({ msg: err.message });
   }
-  console.log("res321",     user)
 };
 
 // LOGIN CONTROLLER
@@ -74,7 +73,6 @@ const loginUser = async (req, res) => {
 
 // ADDJOB CONTROLLER
 const addJob = async (req, res) => {
-  console.log("123Good",   req)
   const {
     title,
     company,
@@ -86,23 +84,6 @@ const addJob = async (req, res) => {
     description,
     requirements
   } = req.body;
-
-  console.log("req.body88",   req.body)
-
-  // Basic validation
-  // if (
-  //   !title ||
-  //   !company ||
-  //   !location ||
-  //   !type ||
-  //   !category ||
-  //   !salary ||
-  //   !postedDate ||
-  //   !description ||
-  //   !requirements
-  // ) {
-  //   return res.status(400).json({ msg: 'Please fill in all required job fields' });
-  // }
 
   try {
     const newJob = new Job({
@@ -128,7 +109,6 @@ const addJob = async (req, res) => {
 
 // DELETEJOB CONTROLLER
 const softDeleteJob = async (req, res) => {
-  console.log("Ai8", req)
   try {
     const job = await Job.findByIdAndUpdate(
       req.params.id,
@@ -175,8 +155,6 @@ const getJobById = async (req, res) => {
 // UPDATE JOB
 const updateJob = async (req, res) => {
   const { id } = req.params;
-  console.log("id123",   id)
-  console.log("id123",   )
   const updatedData = req.body;
 
   try {
@@ -199,7 +177,6 @@ const updateJob = async (req, res) => {
 // APPLY JOB
 const applyForJob = async (req, res) => {
   const { userId, jobId, status, appliedDate, coverLetter, resume } = req.body;
-  console.log("req.body123", req.body);
 
   try {
     if (!userId || !jobId) {
