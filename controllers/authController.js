@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Job = require('../models/addJob');
-const Application = require('../models/application'); 
+const Application = require('../models/Application'); 
 
 
 
