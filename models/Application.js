@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-notepad models\application.js
-
 
 const applicationSchema = new mongoose.Schema(
   {
